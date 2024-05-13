@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ShopItemPrefabScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int itemID;
+    public string itemName;
+    public string flavourText;
 
-    // Update is called once per frame
-    void Update()
+    public SpriteRenderer spriteRenderer;
+
+    public void updateItem(Item item)
     {
-        
+        itemID = item.itemID;
+        spriteRenderer.sprite = item.sprite;
+        itemName = item.itemName;
+        flavourText = item.flavourText;
     }
 }

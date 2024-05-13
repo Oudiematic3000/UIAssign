@@ -6,7 +6,7 @@ public class ShopManager : MonoBehaviour
 {
     public SlotScript[] slots;
     public Object[] cheeses;
-    public ItemPrefabScript itemPrefab;
+    public ShopItemPrefabScript shopItemPrefab;
 
 
     void Start()
@@ -19,9 +19,9 @@ public class ShopManager : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            Instantiate(itemPrefab, slots[i].transform);
+            Instantiate(shopItemPrefab, slots[i].transform);
             Item item = (Item)cheeses[Random.Range(0, cheeses.Length)];
-            itemPrefab.updateItem(item);
+            shopItemPrefab.updateItem(item);
 
         }
     }
