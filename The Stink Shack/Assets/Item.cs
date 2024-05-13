@@ -10,5 +10,6 @@ public class Item : ScriptableObject
     public string flavourText;
     public Sprite sprite;
     public string itemName;
-
+    public int price;
+    public int sellValue;
 }

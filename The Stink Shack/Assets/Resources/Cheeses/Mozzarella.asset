@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9969972693c99448a8930e5e109d730, type: 3}
-  m_Name: Cheddar
+  m_Name: Mozzarella
   m_EditorClassIdentifier: 
-  itemID: 0
-  flavourText: Rated M
+  itemID: 1
+  flavourText: Enjoyment comes from sinking your teeth into it's rubbery flesh. Much
+    like a hopeful orphan.
   sprite: {fileID: 0}
-  itemName: Cheddar
+  itemName: Mozzarella

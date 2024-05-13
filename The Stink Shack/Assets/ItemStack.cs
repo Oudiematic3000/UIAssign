@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemStack : ScriptableObject
+public class ItemStack
 {
     public Item item;
     public int quantity;
