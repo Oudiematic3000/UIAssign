@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 2
   flavourText: Enjoyment comes from sinking your teeth into it's rubbery flesh. Much
     like a hopeful orphan.
-  sprite: {fileID: 21300000, guid: c74e037884d808e4fbf894722c8d975d, type: 3}
+  sprite: {fileID: 21300000, guid: 6b47c500d0ea6ee4487aba91a8b0fca9, type: 3}
   itemName: Mozzarella
-  price: 0
+  price: 2
   sellValue: 0
