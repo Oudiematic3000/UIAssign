@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShopItemPrefabScript : MonoBehaviour
@@ -9,6 +10,7 @@ public class ShopItemPrefabScript : MonoBehaviour
     public string flavourText;
 
     public SpriteRenderer spriteRenderer;
+    public TextMeshProUGUI price;
 
     public void updateItem(Item item)
     {
@@ -16,5 +18,6 @@ public class ShopItemPrefabScript : MonoBehaviour
         spriteRenderer.sprite = item.sprite;
         itemName = item.itemName;
         flavourText = item.flavourText;
+        price.text = "$"+item.price.ToString();
     }
 }
