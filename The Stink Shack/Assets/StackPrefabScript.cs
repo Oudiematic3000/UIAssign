@@ -13,19 +13,33 @@ public class StackPrefabScript : MonoBehaviour
     public TextMeshProUGUI quantityText;
     public Item item;
     public InventoryManager inventoryManager;
+    public SpriteRenderer invSprite;
     public Camera cam;
+    public PolygonCollider2D polygonCollider2D;
+   
+   
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory").GetComponent<InventoryManager>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
-        
+        invSprite =GameObject.Find("Inventory").GetComponent<SpriteRenderer>();
+        polygonCollider2D =this.GetComponent<PolygonCollider2D>();
     }
 
 
     private void Update()
     {
+        if (invSprite.enabled == false)
+        {
+            polygonCollider2D.enabled = false;
+        }
+        else
+        {
+            polygonCollider2D.enabled = true;
+        }
 
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         if (inventoryManager.GetComponent<SpriteRenderer>().isVisible)
         {
@@ -56,12 +70,14 @@ public class StackPrefabScript : MonoBehaviour
             quantityText.enabled = true;
         }
         quantityText.text = quantity.ToString();
+       
     }
 
     public void updateStack(Item i)
     {
         item = i;
         spriteRenderer.sprite = item.sprite;
+        polygonCollider2D = gameObject.GetComponent<PolygonCollider2D>();
         
     }
 
@@ -70,12 +86,15 @@ public class StackPrefabScript : MonoBehaviour
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Vector3 pos = Camera.main.ScreenToWorldPoint(screenPoint);
         transform.position = new Vector3(pos.x, pos.y, 0);
+        
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnMouseUp()
     {
-        transform.position = other.transform.position;
-        Debug.Log("touching");
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+        transform.position = colliders[0].transform.position;
+        transform.SetParent(colliders[0].transform);
     }
+
 }
