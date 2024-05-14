@@ -44,6 +44,9 @@ public class ShopItemPrefabScript : MonoBehaviour
         {
             inventoryManager.addInv(item);
             Destroy(gameObject);
+            tooltip.enabled = false;
+            tooltip.flavourText.enabled = false;
+            tooltip.spriteRenderer.enabled = false;
         }
     }
 
@@ -52,7 +55,7 @@ public class ShopItemPrefabScript : MonoBehaviour
         tooltip.enabled = true;
         tooltip.spriteRenderer.enabled=true;
         tooltip.flavourText.enabled = true;
-        tooltip.flavourText.text = "flavour text: "+item.flavourText;
+        tooltip.flavourText.text = item.itemName+": \nflavour text: "+item.flavourText;
         
     }
 

@@ -9,7 +9,7 @@ public class Tooltip : MonoBehaviour
     public TextMeshProUGUI flavourText;
     private void Start()
     {
-       spriteRenderer.enabled = false;
+      
         
     }
     void Update()

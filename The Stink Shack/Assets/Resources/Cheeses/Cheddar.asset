@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cheddar
   m_EditorClassIdentifier: 
   itemID: 1
-  flavourText: Rated M
+  flavourText: Twice as mature as your humour and half as mature your hairline
   sprite: {fileID: 21300000, guid: cbba0fc510dca4e42aba38e83d5b7d81, type: 3}
   itemName: Cheddar
   price: 2
