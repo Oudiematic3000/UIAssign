@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $3
+  m_text: $2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -367,10 +367,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58939ed6c022a747a1e9d61bb9a7982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
-  itemName: Gruyere
-  flavourText: Gruyere? I hardly know her!
-  item: {fileID: 11400000, guid: 810062e5cc75edf46a214a3b2eab290d, type: 2}
+  itemID: 1
+  itemName: Cheddar
+  flavourText: Twice as mature as your humour and half as mature your hairline
+  item: {fileID: 11400000, guid: 0d9f345130ce4334f99312f768cf6216, type: 2}
   spriteRenderer: {fileID: -5019851380679348385}
   price: {fileID: 1470606702970440578}
   inventoryManager: {fileID: 0}
@@ -417,7 +417,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1fc184a6c21246443ad0b10d9f80a6cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbba0fc510dca4e42aba38e83d5b7d81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
