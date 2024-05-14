@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class StackPrefabScript : MonoBehaviour
 {
-    
-    
-    public int quantity=1;
+
+
+    public int quantity = 1;
     public SpriteRenderer spriteRenderer;
     public TextMeshProUGUI quantityText;
     public Item item;
@@ -18,8 +18,8 @@ public class StackPrefabScript : MonoBehaviour
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory").GetComponent<InventoryManager>();
-        cam = GameObject.Find("Main Camera").GetComponent<Camera>();   
-        
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+
     }
 
 
@@ -29,7 +29,7 @@ public class StackPrefabScript : MonoBehaviour
 
         if (inventoryManager.GetComponent<SpriteRenderer>().isVisible)
         {
-            
+
             spriteRenderer.enabled = true;
             gameObject.GetComponentInChildren<Canvas>().enabled = true;
             gameObject.GetComponentInChildren<Canvas>().overrideSorting = true;
@@ -37,7 +37,7 @@ public class StackPrefabScript : MonoBehaviour
         }
         else
         {
-            
+
             spriteRenderer.enabled = false;
             gameObject.GetComponentInChildren<Canvas>().enabled = false;
 
@@ -54,6 +54,7 @@ public class StackPrefabScript : MonoBehaviour
     {
         item = i;
         spriteRenderer.sprite = item.sprite;
+        gameObject.AddComponent<PolygonCollider2D>();
     }
 
     private void OnMouseDrag()
@@ -63,8 +64,13 @@ public class StackPrefabScript : MonoBehaviour
         transform.position = new Vector3(pos.x, pos.y, 0);
 
     }
-    private void OnEndDrag()
-    {
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (collision.GetComponent<SlotScript>() != null)
+                transform.SetParent(collision.transform);
+        }
     }
 }
