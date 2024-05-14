@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9969972693c99448a8930e5e109d730, type: 3}
   m_Name: Gruyere
   m_EditorClassIdentifier: 
-  itemID: 1
+  itemID: 2
   flavourText: Gruyere? I hardly know her!
   sprite: {fileID: 21300000, guid: 1fc184a6c21246443ad0b10d9f80a6cc, type: 3}
   itemName: Gruyere

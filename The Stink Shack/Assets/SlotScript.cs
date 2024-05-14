@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlotScript : MonoBehaviour
 {
-    private bool isOccupied=false;
+    public bool isOccupied=false;
     
     
 }

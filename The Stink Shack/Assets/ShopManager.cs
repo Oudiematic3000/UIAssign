@@ -19,9 +19,10 @@ public class ShopManager : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            Instantiate(shopItemPrefab, slots[i].transform);
+            
             Item item = (Item)cheeses[Random.Range(0, cheeses.Length)];
             shopItemPrefab.updateItem(item);
+            Instantiate(shopItemPrefab, slots[i].transform);
 
         }
     }
