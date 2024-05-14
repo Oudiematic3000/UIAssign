@@ -21,6 +21,7 @@ public class ShopItemPrefabScript : MonoBehaviour
     {
         inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
         player = GameObject.Find("Player").GetComponent<Player>();  
+        tooltip = GameObject.Find("Tooltip").GetComponent<Tooltip>();
         
     }
 
@@ -49,6 +50,8 @@ public class ShopItemPrefabScript : MonoBehaviour
     private void OnMouseEnter()
     {
         tooltip.enabled = true;
+        tooltip.spriteRenderer.enabled=true;
+        tooltip.flavourText.enabled = true;
         tooltip.flavourText.text = "flavour text: "+item.flavourText;
         
     }
@@ -56,7 +59,8 @@ public class ShopItemPrefabScript : MonoBehaviour
     private void OnMouseExit()
     {
         tooltip.enabled = false;
-
+        tooltip.flavourText.enabled=false;
+        tooltip.spriteRenderer.enabled = false;
     }
 
 }
