@@ -15,11 +15,13 @@ public class ShopItemPrefabScript : MonoBehaviour
 
     public InventoryManager inventoryManager;
     public Player player;
+    public Tooltip tooltip;
 
     private void Start()
     {
         inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
         player = GameObject.Find("Player").GetComponent<Player>();  
+        
     }
 
     
@@ -43,4 +45,18 @@ public class ShopItemPrefabScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnMouseEnter()
+    {
+        tooltip.enabled = true;
+        tooltip.flavourText.text = "flavour text: "+item.flavourText;
+        
+    }
+
+    private void OnMouseExit()
+    {
+        tooltip.enabled = false;
+
+    }
+
 }
