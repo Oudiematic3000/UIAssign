@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -7,8 +8,8 @@ public class InventoryManager : MonoBehaviour
     public SlotScript[] slots;
     public Object[] cheeses;
     public StackPrefabScript stackPrefab;
-    public Item[] inventory;
-    private int index = 0;
+    
+
     void Start()
     {
         cheeses = Resources.LoadAll("Cheeses", typeof(Item));
@@ -17,13 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     public void addInv(Item item)
     {
-        for(int i=0; i<inventory.Length; i++)
-        {
-            if (inventory[i] == item)
-            {
-
-            }
-        }
+        
 
         for (int i = 0; i < slots.Length; i++)
         {
@@ -40,7 +35,8 @@ public class InventoryManager : MonoBehaviour
             {
                 slots[i].isOccupied = true;
                 stackPrefab.updateStack(item);
-                Instantiate(stackPrefab, slots[i].transform);
+               StackPrefabScript spwnCheese= Instantiate(stackPrefab, slots[i].transform);
+                spwnCheese.AddComponent<PolygonCollider2D>();
 
                 return;
             }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShopManager : MonoBehaviour
@@ -22,7 +23,8 @@ public class ShopManager : MonoBehaviour
             
             Item item = (Item)cheeses[Random.Range(0, cheeses.Length)];
             shopItemPrefab.updateItem(item);
-            Instantiate(shopItemPrefab, slots[i].transform);
+           ShopItemPrefabScript spwnCheese= Instantiate(shopItemPrefab, slots[i].transform);
+            spwnCheese.AddComponent<PolygonCollider2D>();
 
         }
     }

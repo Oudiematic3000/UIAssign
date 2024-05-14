@@ -19,7 +19,7 @@ public class StackPrefabScript : MonoBehaviour
     {
         inventoryManager = GameObject.Find("Inventory").GetComponent<InventoryManager>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
-
+        
     }
 
 
@@ -47,6 +47,14 @@ public class StackPrefabScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (quantity == 1)
+        {
+            quantityText.enabled = false;
+        }
+        else
+        {
+            quantityText.enabled = true;
+        }
         quantityText.text = quantity.ToString();
     }
 
@@ -54,7 +62,7 @@ public class StackPrefabScript : MonoBehaviour
     {
         item = i;
         spriteRenderer.sprite = item.sprite;
-        gameObject.AddComponent<PolygonCollider2D>();
+        
     }
 
     private void OnMouseDrag()
@@ -65,12 +73,9 @@ public class StackPrefabScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (collision.GetComponent<SlotScript>() != null)
-                transform.SetParent(collision.transform);
-        }
+        transform.position = other.transform.position;
+        Debug.Log("touching");
     }
 }

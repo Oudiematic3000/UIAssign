@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1330486662549650726}
   - component: {fileID: 7680803827674448698}
-  - component: {fileID: -2849162826327039067}
-  m_Layer: 5
+  - component: {fileID: 4948578963644195558}
+  m_Layer: 2
   m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
---- !u!60 &-2849162826327039067
-PolygonCollider2D:
+--- !u!61 &4948578963644195558
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,11 +92,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 200, y: 200}
+  m_EdgeRadius: 0
