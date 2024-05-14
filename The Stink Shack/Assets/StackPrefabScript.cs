@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StackPrefabScript : MonoBehaviour
@@ -12,11 +13,13 @@ public class StackPrefabScript : MonoBehaviour
     public TextMeshProUGUI quantityText;
     public Item item;
     public InventoryManager inventoryManager;
+    public Camera cam;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory").GetComponent<InventoryManager>();
-        updateStack(item);
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();   
+        
     }
 
 
@@ -51,5 +54,17 @@ public class StackPrefabScript : MonoBehaviour
     {
         item = i;
         spriteRenderer.sprite = item.sprite;
+    }
+
+    private void OnMouseDrag()
+    {
+        Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        Vector3 pos = Camera.main.ScreenToWorldPoint(screenPoint);
+        transform.position = new Vector3(pos.x, pos.y, 0);
+
+    }
+    private void OnEndDrag()
+    {
+
     }
 }

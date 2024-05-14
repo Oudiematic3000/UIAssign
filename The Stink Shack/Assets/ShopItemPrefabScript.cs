@@ -36,5 +36,6 @@ public class ShopItemPrefabScript : MonoBehaviour
     private void OnMouseDown()
     {
         inventoryManager.addInv(item);
+        Destroy(gameObject);
     }
 }
