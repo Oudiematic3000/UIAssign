@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1330486662549650726}
   - component: {fileID: 7680803827674448698}
   - component: {fileID: 4948578963644195558}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
+  boxCollider2D: {fileID: 4948578963644195558}
 --- !u!61 &4948578963644195558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -83,11 +84,11 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 200, y: 200}
-    newSize: {x: 900, y: 1000}
+    newSize: {x: 200, y: 200}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200, y: 200}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0

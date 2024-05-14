@@ -16,8 +16,11 @@ public class StackPrefabScript : MonoBehaviour
     public SpriteRenderer invSprite;
     public Camera cam;
     public PolygonCollider2D polygonCollider2D;
-   
-   
+    public bool touching;
+    private Vector3 iPos;
+    private Transform iParent;
+
+
 
     private void Start()
     {
@@ -80,21 +83,54 @@ public class StackPrefabScript : MonoBehaviour
         polygonCollider2D = gameObject.GetComponent<PolygonCollider2D>();
         
     }
-
+    private void OnMouseDown()
+    {
+         iPos= transform.parent.transform.position;
+         iParent = transform.parent;
+    }
     private void OnMouseDrag()
     {
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Vector3 pos = Camera.main.ScreenToWorldPoint(screenPoint);
         transform.position = new Vector3(pos.x, pos.y, 0);
-        
+       
 
     }
-
     private void OnMouseUp()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
-        transform.position = colliders[0].transform.position;
-        transform.SetParent(colliders[0].transform);
+        if (!touching)
+        {
+            transform.SetParent(iParent);
+            transform.position = iPos;
+        }
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (!collision.GetComponent<SlotScript>().isOccupied || transform.IsChildOf(collision.transform))
+        {
+            
+
+        if (collision.GetComponent<SlotScript>() != null)
+        {
+            transform.SetParent(collision.transform);
+            transform.position = collision.transform.position;
+            touching = true;
+        }
+    }
+        
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (touching)
+        {
+            touching = false;
+            Debug.Log("Leave");
+        }
     }
 
 }

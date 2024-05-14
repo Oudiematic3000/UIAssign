@@ -5,14 +5,24 @@ using UnityEngine;
 public class SlotScript : MonoBehaviour
 {
     public bool isOccupied=false;
+    public BoxCollider2D  boxCollider2D;
 
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        collision.transform.parent = transform;
-        collision.transform.position = transform.position;
-        Debug.Log("Workin");
+        if (transform.childCount > 0)
+        {
+            isOccupied = true;
+        }
+        else
+        {
+            isOccupied = false;
+        }
+        
+      
+
+        
     }
+
+    
 
 }

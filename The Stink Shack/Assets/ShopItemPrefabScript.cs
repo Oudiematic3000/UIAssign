@@ -14,10 +14,12 @@ public class ShopItemPrefabScript : MonoBehaviour
     public TextMeshProUGUI price;
 
     public InventoryManager inventoryManager;
+    public Player player;
 
     private void Start()
     {
         inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
+        player = GameObject.Find("Player").GetComponent<Player>();  
     }
 
     
@@ -35,7 +37,10 @@ public class ShopItemPrefabScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        inventoryManager.addInv(item);
-        Destroy(gameObject);
+        if (player.money >= item.price)
+        {
+            inventoryManager.addInv(item);
+            Destroy(gameObject);
+        }
     }
 }
