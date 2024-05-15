@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
         stockUp();
     }
 
-    void stockUp()
+    public void stockUp()
     {
         for (int i = 0; i < slots.Length; i++)
         {

@@ -33,7 +33,7 @@ public class StackPrefabScript : MonoBehaviour
 
     private void Update()
     {
-        if (invSprite.enabled == false)
+        if (transform.parent.transform.parent.GetComponent<SpriteRenderer>().enabled == false)
         {
             polygonCollider2D.enabled = false;
         }
@@ -44,7 +44,7 @@ public class StackPrefabScript : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
-        if (inventoryManager.GetComponent<SpriteRenderer>().isVisible)
+        if (transform.parent.transform.parent.GetComponent<SpriteRenderer>().isVisible)
         {
 
             spriteRenderer.enabled = true;

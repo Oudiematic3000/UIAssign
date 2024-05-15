@@ -18,5 +18,6 @@ public class HouseButtonScript : MonoBehaviour
         canvas3.gameObject.SetActive(true);
         door.gameObject.SetActive(true);
         chestButton.gameObject.SetActive(true);
+        this.gameObject.SetActive(false );
     }
 }
