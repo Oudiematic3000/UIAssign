@@ -16,13 +16,13 @@ public class ShopItemPrefabScript : MonoBehaviour
     public InventoryManager inventoryManager;
     public Player player;
     public Tooltip tooltip;
-
+    public Speechbub speechbub;
     private void Start()
     {
         inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
         player = GameObject.Find("Player").GetComponent<Player>();  
         tooltip = GameObject.Find("Tooltip").GetComponent<Tooltip>();
-        
+        speechbub = GameObject.Find("Speech Bubble").GetComponent<Speechbub>();
     }
 
     
@@ -47,6 +47,7 @@ public class ShopItemPrefabScript : MonoBehaviour
             tooltip.enabled = false;
             tooltip.flavourText.enabled = false;
             tooltip.spriteRenderer.enabled = false;
+            speechbub.speak(Random.Range(0, 3));
         }
     }
 

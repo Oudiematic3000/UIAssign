@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Speechbub : MonoBehaviour
@@ -7,6 +8,7 @@ public class Speechbub : MonoBehaviour
     private float timer = 0;
     public bool talking = false;
     public string[] lines;
+    public TextMeshProUGUI textSpeech; 
     void Start()
     {
         this.GetComponent<SpriteRenderer>().enabled = false;
@@ -19,7 +21,7 @@ public class Speechbub : MonoBehaviour
     {
         if (talking)
         {
-            if (timer < 3)
+            if (timer < 1)
             {
                 this.GetComponent<SpriteRenderer>().enabled = true;
                 this.GetComponentInChildren<Canvas>().enabled = true;
@@ -38,6 +40,8 @@ public class Speechbub : MonoBehaviour
 
     public void speak(int ID)
     {
-
+        textSpeech.text = lines[ID];
+        talking=true;
+        timer = 0;
     }
 }

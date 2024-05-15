@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
     public ChestManager chestManager;
     public InventoryManager inventoryManager;
     public ShopManager shopManager;
+    public GameObject sellspace;
 
     public PolygonCollider2D polygonCollider2D;
     private void OnMouseDown()
@@ -26,6 +27,7 @@ public class Door : MonoBehaviour
         chestButton.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
         chestManager.gameObject.SetActive(false);
+        sellspace.SetActive(true);
         shopManager.stockUp();
         
     

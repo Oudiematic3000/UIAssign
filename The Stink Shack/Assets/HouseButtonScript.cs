@@ -10,6 +10,7 @@ public class HouseButtonScript : MonoBehaviour
     public Canvas canvas3;
     public Door door;
     public ChestButton chestButton;
+    public GameObject sellspace;
     public void toHouse()
     {
        shopkeep.SetActive(false);
@@ -19,5 +20,6 @@ public class HouseButtonScript : MonoBehaviour
         door.gameObject.SetActive(true);
         chestButton.gameObject.SetActive(true);
         this.gameObject.SetActive(false );
+        sellspace.SetActive(false);
     }
 }

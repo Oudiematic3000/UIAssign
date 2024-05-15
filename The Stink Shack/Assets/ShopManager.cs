@@ -31,16 +31,22 @@ public class ShopManager : MonoBehaviour
     }
 
     
-    public void reAdd(Item item)
+    public void reAdd(Item item, int q)
     {
-        for(int i = 0;i < slots.Length;i++)
+
+
+
+        for (int i = 0; i < slots.Length; i++)
         {
             if (!slots[i].isOccupied)
             {
                 shopItemPrefab.updateItem(item);
                 ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, slots[i].transform);
                 spwnCheese.AddComponent<PolygonCollider2D>();
+                return;
             }
+
         }
-    }
+        }
+    
 }

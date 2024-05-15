@@ -114,9 +114,12 @@ public class StackPrefabScript : MonoBehaviour
             transform.position = iPos;
         }else if (sold)
         {
-            Destroy(gameObject);
-            shopManager.reAdd(item);
+           
+            transform.SetParent(iParent);
+            transform.position = iPos;
+            shopManager.reAdd(item, quantity);
             player.money += item.sellValue;
+            quantity--;
         }
         
     }
