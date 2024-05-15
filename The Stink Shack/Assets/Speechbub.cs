@@ -21,7 +21,7 @@ public class Speechbub : MonoBehaviour
     {
         if (talking)
         {
-            if (timer < 1)
+            if (timer < 2.5)
             {
                 this.GetComponent<SpriteRenderer>().enabled = true;
                 this.GetComponentInChildren<Canvas>().enabled = true;

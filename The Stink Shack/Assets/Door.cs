@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
     public InventoryManager inventoryManager;
     public ShopManager shopManager;
     public GameObject sellspace;
+    public Speechbub speechbub;
 
     public PolygonCollider2D polygonCollider2D;
     private void OnMouseDown()
@@ -28,6 +29,7 @@ public class Door : MonoBehaviour
         this.gameObject.SetActive(false);
         chestManager.gameObject.SetActive(false);
         sellspace.SetActive(true);
+        speechbub.gameObject.SetActive(true);
         shopManager.stockUp();
         
     

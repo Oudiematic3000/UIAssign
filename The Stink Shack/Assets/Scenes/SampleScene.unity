@@ -5289,6 +5289,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 1477925240}
   shopManager: {fileID: 489516007}
   sellspace: {fileID: 1980720938}
+  speechbub: {fileID: 1106210567}
   polygonCollider2D: {fileID: 930869377}
 --- !u!60 &930869377
 PolygonCollider2D:
@@ -6003,6 +6004,7 @@ MonoBehaviour:
   - Not to your liking?
   - Bet the cheese wasn't a fan of you either
   - Back again?
+  - You wanna see the good stuff?
   textSpeech: {fileID: 992922481}
 --- !u!212 &1106210568
 SpriteRenderer:
@@ -6356,6 +6358,7 @@ MonoBehaviour:
   door: {fileID: 930869376}
   chestButton: {fileID: 361852871}
   sellspace: {fileID: 1980720938}
+  Speechbub: {fileID: 1106210567}
 --- !u!114 &1185373440
 MonoBehaviour:
   m_ObjectHideFlags: 0

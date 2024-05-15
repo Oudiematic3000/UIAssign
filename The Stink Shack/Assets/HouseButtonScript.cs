@@ -11,6 +11,7 @@ public class HouseButtonScript : MonoBehaviour
     public Door door;
     public ChestButton chestButton;
     public GameObject sellspace;
+    public Speechbub Speechbub;
     public void toHouse()
     {
        shopkeep.SetActive(false);
@@ -21,5 +22,6 @@ public class HouseButtonScript : MonoBehaviour
         chestButton.gameObject.SetActive(true);
         this.gameObject.SetActive(false );
         sellspace.SetActive(false);
+        Speechbub.gameObject.SetActive(false);
     }
 }

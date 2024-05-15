@@ -23,6 +23,7 @@ public class StackPrefabScript : MonoBehaviour
     public bool sold=false;
     public ShopManager shopManager;
     public Tooltip tooltip;
+    public Speechbub speechbub;
 
 
 
@@ -35,6 +36,7 @@ public class StackPrefabScript : MonoBehaviour
         player =GameObject.Find("Player").GetComponent<Player>();  
         shopManager=GameObject.Find("Shop").GetComponent<ShopManager>();
         tooltip = GameObject.Find("Tooltip").GetComponent<Tooltip>();
+        speechbub = GameObject.Find("Speech Bubble").GetComponent<Speechbub>();
     }
 
 
@@ -120,6 +122,7 @@ public class StackPrefabScript : MonoBehaviour
             shopManager.reAdd(item, quantity);
             player.money += item.sellValue;
             quantity--;
+            speechbub.speak(Random.Range(4, 6));
         }
         
     }
@@ -127,7 +130,7 @@ public class StackPrefabScript : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collision.GetComponent<SlotScript>() != null)
+        if (collision.GetComponent<SlotScript>() != null && collision.transform.parent.transform.parent.GetComponent<ShopManager>() == null)
         {
             
 
