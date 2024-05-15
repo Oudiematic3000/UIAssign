@@ -22,6 +22,7 @@ public class StackPrefabScript : MonoBehaviour
     public Player player;
     public bool sold=false;
     public ShopManager shopManager;
+    public Tooltip tooltip;
 
 
 
@@ -33,6 +34,7 @@ public class StackPrefabScript : MonoBehaviour
         polygonCollider2D =this.GetComponent<PolygonCollider2D>();
         player =GameObject.Find("Player").GetComponent<Player>();  
         shopManager=GameObject.Find("Shop").GetComponent<ShopManager>();
+        tooltip = GameObject.Find("Tooltip").GetComponent<Tooltip>();
     }
 
 
@@ -98,7 +100,10 @@ public class StackPrefabScript : MonoBehaviour
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Vector3 pos = Camera.main.ScreenToWorldPoint(screenPoint);
         transform.position = new Vector3(pos.x, pos.y, 0);
-       
+        tooltip.enabled = false;
+        tooltip.flavourText.enabled = false;
+        tooltip.spriteRenderer.enabled = false;
+
 
     }
     private void OnMouseUp()
@@ -111,7 +116,7 @@ public class StackPrefabScript : MonoBehaviour
         {
             Destroy(gameObject);
             shopManager.reAdd(item);
-            player.money -= item.sellValue;
+            player.money += item.sellValue;
         }
         
     }
@@ -154,6 +159,22 @@ public class StackPrefabScript : MonoBehaviour
             
         }
         
+    }
+
+    private void OnMouseEnter()
+    {
+        tooltip.enabled = true;
+        tooltip.spriteRenderer.enabled = true;
+        tooltip.flavourText.enabled = true;
+        tooltip.flavourText.text = item.itemName + ": \nflavour text: " + item.flavourText;
+
+    }
+
+    private void OnMouseExit()
+    {
+        tooltip.enabled = false;
+        tooltip.flavourText.enabled = false;
+        tooltip.spriteRenderer.enabled = false;
     }
 
 }

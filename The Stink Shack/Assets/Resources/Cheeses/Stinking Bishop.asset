@@ -17,4 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: bf36e31ca3fe56341b82ba94f73ad3a5, type: 3}
   itemName: Stinking Bishop
   price: 6
-  sellValue: 0
+  sellValue: 5

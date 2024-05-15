@@ -18,4 +18,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 6b47c500d0ea6ee4487aba91a8b0fca9, type: 3}
   itemName: Mozzarella
   price: 2
-  sellValue: 0
+  sellValue: 1

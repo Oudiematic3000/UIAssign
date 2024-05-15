@@ -17,4 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 908ecdf3a3714f04fa743fa367012a29, type: 3}
   itemName: Camembert
   price: 4
-  sellValue: 0
+  sellValue: 3

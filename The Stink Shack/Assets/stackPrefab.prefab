@@ -111,6 +111,7 @@ MonoBehaviour:
   player: {fileID: 0}
   sold: 0
   shopManager: {fileID: 0}
+  tooltip: {fileID: 0}
 --- !u!50 &6283353106357164739
 Rigidbody2D:
   serializedVersion: 4
