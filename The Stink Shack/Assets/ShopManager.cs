@@ -6,14 +6,17 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public SlotScript[] slots;
+    public SlotScript[] exoticSlots;
     public Object[] cheeses;
     public ShopItemPrefabScript shopItemPrefab;
+    
 
 
     void Start()
     {
         cheeses = Resources.LoadAll("Cheeses", typeof(Item));
         stockUp();
+        stockUpExotic();
     }
 
     public void stockUp()
@@ -22,7 +25,7 @@ public class ShopManager : MonoBehaviour
         {
             if (!slots[i].isOccupied)
             {
-                Item item = (Item)cheeses[Random.Range(0, cheeses.Length)];
+                Item item = (Item)cheeses[Random.Range(5, cheeses.Length)];
                 shopItemPrefab.updateItem(item);
                 ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, slots[i].transform);
                 spwnCheese.AddComponent<PolygonCollider2D>();
@@ -30,7 +33,21 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    
+    public void stockUpExotic()
+    {
+        for (int i = 0; i < exoticSlots.Length; i++)
+        {
+            if (!exoticSlots[i].isOccupied)
+            {
+                Item item = (Item)cheeses[Random.Range(0, 4)];
+                shopItemPrefab.updateItem(item);
+                ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, exoticSlots[i].transform);
+                spwnCheese.AddComponent<PolygonCollider2D>();
+            }
+        }
+    }
+
+
     public void reAdd(Item item, int q)
     {
 

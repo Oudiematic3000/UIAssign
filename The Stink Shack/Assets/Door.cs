@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
         sellspace.SetActive(true);
         speechbub.gameObject.SetActive(true);
         shopManager.stockUp();
-        
+        speechbub.speak(7);
     
 }
     private void Update()

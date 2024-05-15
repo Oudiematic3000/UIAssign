@@ -130,7 +130,8 @@ public class StackPrefabScript : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collision.GetComponent<SlotScript>() != null && collision.transform.parent.transform.parent.GetComponent<ShopManager>() == null)
+        if (collision.GetComponent<SlotScript>() != null && collision.transform.parent.GetComponentInParent<ShopManager>() == null)
+
         {
             
 
@@ -172,7 +173,7 @@ public class StackPrefabScript : MonoBehaviour
         tooltip.enabled = true;
         tooltip.spriteRenderer.enabled = true;
         tooltip.flavourText.enabled = true;
-        tooltip.flavourText.text = item.itemName + ": \nflavour text: " + item.flavourText;
+        tooltip.flavourText.text = item.itemName + ": \nFlavour text: " + item.flavourText;
 
     }
 

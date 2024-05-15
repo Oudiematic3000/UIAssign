@@ -11,6 +11,7 @@ public class ButtonScript : MonoBehaviour
     private bool isOpen = false;
     public Button button;
     public Object[] bagSprites;
+    public Shopkeep shopkeep;
      void Start()
     {
       bagSprites = Resources.LoadAll("BagButton", typeof(Sprite));
@@ -21,9 +22,11 @@ public class ButtonScript : MonoBehaviour
         if (isOpen)
         {
             button.image.sprite = (Sprite)bagSprites[1];
+            shopkeep.GetComponent<PolygonCollider2D>().enabled = false;
         }    else
         {
             button.image.sprite = (Sprite)bagSprites[0];
+            shopkeep.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }
     public void openPack()

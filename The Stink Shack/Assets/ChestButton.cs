@@ -10,6 +10,7 @@ public class ChestButton : MonoBehaviour
     public bool isOpen = false;
     public Button button;
     public Object[] chestSprites;
+    public UpgradeButton upgradeButton;
     void Start()
     {
         chestSprites = Resources.LoadAll("ChestButton", typeof(Sprite));
@@ -20,10 +21,12 @@ public class ChestButton : MonoBehaviour
         if (isOpen)
         {
             button.image.sprite = (Sprite)chestSprites[1];
+            upgradeButton.gameObject.SetActive(true);
         }
         else
         {
             button.image.sprite = (Sprite)chestSprites[0];
+            upgradeButton.gameObject.SetActive(false);
         }
     }
     public void openChest()

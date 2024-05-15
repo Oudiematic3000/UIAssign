@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9969972693c99448a8930e5e109d730, type: 3}
-  m_Name: Cheddar
+  m_Name: 0Cheese Board
   m_EditorClassIdentifier: 
-  itemID: 1
-  flavourText: Hard cheese with a sweet flavour that gets sharper as it matures.
-  sprite: {fileID: 21300000, guid: cbba0fc510dca4e42aba38e83d5b7d81, type: 3}
-  itemName: Cheddar
-  price: 2
-  sellValue: 1
+  itemID: 0
+  flavourText: Hand-crafted cheese board. Knife was stolen by some hairline-less
+    creature.
+  sprite: {fileID: 21300000, guid: 75b3e7ffbe268fa44a5a9f21ed53994d, type: 3}
+  itemName: Cheese Board
+  price: 40
+  sellValue: 20

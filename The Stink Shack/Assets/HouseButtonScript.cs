@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HouseButtonScript : MonoBehaviour
 {
-    public GameObject shopkeep;
+    public Shopkeep shopkeep;
     public Canvas canvas;
     public Canvas canvas2;
     public Canvas canvas3;
@@ -14,7 +14,7 @@ public class HouseButtonScript : MonoBehaviour
     public Speechbub Speechbub;
     public void toHouse()
     {
-       shopkeep.SetActive(false);
+       shopkeep.gameObject.SetActive(false);
         canvas.gameObject.SetActive(false);
         canvas2.gameObject.SetActive(false);
         canvas3.gameObject.SetActive(true);
@@ -24,4 +24,6 @@ public class HouseButtonScript : MonoBehaviour
         sellspace.SetActive(false);
         Speechbub.gameObject.SetActive(false);
     }
+
+    
 }
