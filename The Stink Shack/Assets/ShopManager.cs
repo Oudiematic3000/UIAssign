@@ -20,12 +20,13 @@ public class ShopManager : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            
-            Item item = (Item)cheeses[Random.Range(0, cheeses.Length)];
-            shopItemPrefab.updateItem(item);
-           ShopItemPrefabScript spwnCheese= Instantiate(shopItemPrefab, slots[i].transform);
-            spwnCheese.AddComponent<PolygonCollider2D>();
-
+            if (!slots[i].isOccupied)
+            {
+                Item item = (Item)cheeses[Random.Range(0, cheeses.Length)];
+                shopItemPrefab.updateItem(item);
+                ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, slots[i].transform);
+                spwnCheese.AddComponent<PolygonCollider2D>();
+            }
         }
     }
 
