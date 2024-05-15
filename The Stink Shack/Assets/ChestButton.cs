@@ -29,6 +29,7 @@ public class ChestButton : MonoBehaviour
     public void openChest()
     {
         chestSprite.enabled = !chestSprite.enabled;
+        chest.gameObject.SetActive(true);
         isOpen = !isOpen;
     }
 }

@@ -19,6 +19,9 @@ public class StackPrefabScript : MonoBehaviour
     public bool touching;
     private Vector3 iPos;
     private Transform iParent;
+    public Player player;
+    public bool sold=false;
+    public ShopManager shopManager;
 
 
 
@@ -28,6 +31,8 @@ public class StackPrefabScript : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         invSprite =GameObject.Find("Inventory").GetComponent<SpriteRenderer>();
         polygonCollider2D =this.GetComponent<PolygonCollider2D>();
+        player =GameObject.Find("Player").GetComponent<Player>();  
+        shopManager=GameObject.Find("Shop").GetComponent<ShopManager>();
     }
 
 
@@ -98,10 +103,15 @@ public class StackPrefabScript : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (!touching)
+        if (!touching &&!sold)
         {
             transform.SetParent(iParent);
             transform.position = iPos;
+        }else if (sold)
+        {
+            Destroy(gameObject);
+            shopManager.reAdd(item);
+            player.money -= item.sellValue;
         }
         
     }
@@ -109,19 +119,31 @@ public class StackPrefabScript : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (!collision.GetComponent<SlotScript>().isOccupied || transform.IsChildOf(collision.transform))
+        if (collision.GetComponent<SlotScript>() != null)
         {
             
 
-        if (collision.GetComponent<SlotScript>() != null)
+        if (!collision.GetComponent<SlotScript>().isOccupied || transform.IsChildOf(collision.transform))
         {
             transform.SetParent(collision.transform);
             transform.position = collision.transform.position;
             touching = true;
+                sold=false;
         }
     }
+        else if (collision.name == "Sellspace")
+        {
+            
+            sold = true;
+
+        }
         
+            
+
         
+       
+
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -129,8 +151,9 @@ public class StackPrefabScript : MonoBehaviour
         if (touching)
         {
             touching = false;
-            Debug.Log("Leave");
+            
         }
+        
     }
 
 }

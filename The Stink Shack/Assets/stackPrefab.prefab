@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: bf36e31ca3fe56341b82ba94f73ad3a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbba0fc510dca4e42aba38e83d5b7d81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,12 +102,15 @@ MonoBehaviour:
   quantity: 1
   spriteRenderer: {fileID: 2099948080002797909}
   quantityText: {fileID: 164842260784798069}
-  item: {fileID: 11400000, guid: 07aae862a56b03d4089d6714f573cb36, type: 2}
+  item: {fileID: 11400000, guid: 0d9f345130ce4334f99312f768cf6216, type: 2}
   inventoryManager: {fileID: 0}
   invSprite: {fileID: 0}
   cam: {fileID: 0}
   polygonCollider2D: {fileID: 0}
   touching: 0
+  player: {fileID: 0}
+  sold: 0
+  shopManager: {fileID: 0}
 --- !u!50 &6283353106357164739
 Rigidbody2D:
   serializedVersion: 4
