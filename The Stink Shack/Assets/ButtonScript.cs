@@ -23,10 +23,11 @@ public class ButtonScript : MonoBehaviour
         {
             button.image.sprite = (Sprite)bagSprites[1];
             shopkeep.GetComponent<PolygonCollider2D>().enabled = false;
-        }    else
+        }    else 
         {
             button.image.sprite = (Sprite)bagSprites[0];
-            shopkeep.GetComponent<PolygonCollider2D>().enabled = true;
+            if (shopkeep.colOn)
+                shopkeep.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }
     public void openPack()

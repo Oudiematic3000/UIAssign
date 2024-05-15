@@ -6,13 +6,23 @@ public class Shopkeep : MonoBehaviour
 {
     public Speechbub speechbub;
     public GameObject CHEESE;
+    public PolygonCollider2D polygonCollider2D;
+    public bool colOn=true;
  
     private void OnMouseDown()
     {
-        
-        
-            speechbub.speak(8);
+           speechbub.speak(8);
            CHEESE.SetActive(true);
-        
+    }
+
+    private void Update()
+    {
+        if (!colOn)
+        {
+            polygonCollider2D.enabled = false;
+        }else
+        {
+            polygonCollider2D.enabled = true;
+        }
     }
 }

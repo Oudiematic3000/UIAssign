@@ -39,7 +39,7 @@ public class ShopManager : MonoBehaviour
         {
             if (!exoticSlots[i].isOccupied)
             {
-                Item item = (Item)cheeses[Random.Range(0, 4)];
+                Item item = (Item)cheeses[i];
                 shopItemPrefab.updateItem(item);
                 ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, exoticSlots[i].transform);
                 spwnCheese.AddComponent<PolygonCollider2D>();
@@ -51,18 +51,34 @@ public class ShopManager : MonoBehaviour
     public void reAdd(Item item, int q)
     {
 
-
-
-        for (int i = 0; i < slots.Length; i++)
+        if (item.itemID > 4)
         {
-            if (!slots[i].isOccupied)
-            {
-                shopItemPrefab.updateItem(item);
-                ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, slots[i].transform);
-                spwnCheese.AddComponent<PolygonCollider2D>();
-                return;
-            }
 
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (!slots[i].isOccupied)
+                {
+                    shopItemPrefab.updateItem(item);
+                    ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, slots[i].transform);
+                    spwnCheese.AddComponent<PolygonCollider2D>();
+                    return;
+                }
+
+            }
+        }
+        else
+        {
+            for (int i = 0; i < exoticSlots.Length; i++)
+            {
+                if (!exoticSlots[i].isOccupied)
+                {
+                    shopItemPrefab.updateItem(item);
+                    ShopItemPrefabScript spwnCheese = Instantiate(shopItemPrefab, exoticSlots[i].transform);
+                    spwnCheese.AddComponent<PolygonCollider2D>();
+                    return;
+                }
+
+            }
         }
         }
     

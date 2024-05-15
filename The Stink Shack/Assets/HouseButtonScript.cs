@@ -25,5 +25,9 @@ public class HouseButtonScript : MonoBehaviour
         Speechbub.gameObject.SetActive(false);
     }
 
+    public void HideHim()
+    {
+        shopkeep.colOn=false;
+    }
     
 }

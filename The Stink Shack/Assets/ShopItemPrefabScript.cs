@@ -56,8 +56,8 @@ public class ShopItemPrefabScript : MonoBehaviour
         tooltip.enabled = true;
         tooltip.spriteRenderer.enabled=true;
         tooltip.flavourText.enabled = true;
-        tooltip.flavourText.text = item.itemName+": \nflavour text: "+item.flavourText;
-        
+        tooltip.flavourText.text = item.itemName + "\nFlavour text: " + item.flavourText;
+
     }
 
     private void OnMouseExit()

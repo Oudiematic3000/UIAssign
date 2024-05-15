@@ -173,7 +173,7 @@ public class StackPrefabScript : MonoBehaviour
         tooltip.enabled = true;
         tooltip.spriteRenderer.enabled = true;
         tooltip.flavourText.enabled = true;
-        tooltip.flavourText.text = item.itemName + ": \nFlavour text: " + item.flavourText;
+        tooltip.flavourText.text = item.itemName + "\nFlavour text: " + item.flavourText;
 
     }
 
