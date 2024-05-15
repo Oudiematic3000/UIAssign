@@ -7,7 +7,7 @@ public class ChestButton : MonoBehaviour
 {
     public ChestManager chest;
     public SpriteRenderer chestSprite;
-    private bool isOpen = false;
+    public bool isOpen = false;
     public Button button;
     public Object[] chestSprites;
     void Start()
@@ -26,7 +26,7 @@ public class ChestButton : MonoBehaviour
             button.image.sprite = (Sprite)chestSprites[0];
         }
     }
-    public void openPack()
+    public void openChest()
     {
         chestSprite.enabled = !chestSprite.enabled;
         isOpen = !isOpen;

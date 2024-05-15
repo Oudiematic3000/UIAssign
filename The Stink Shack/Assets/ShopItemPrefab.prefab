@@ -367,10 +367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58939ed6c022a747a1e9d61bb9a7982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
-  itemName: Cheddar
-  flavourText: Twice as mature as your humour and half as mature your hairline
-  item: {fileID: 11400000, guid: 0d9f345130ce4334f99312f768cf6216, type: 2}
+  itemID: 3
+  itemName: Mozzarella
+  flavourText: Enjoyment comes from sinking your teeth into it's rubbery flesh. Much
+    like a hopeful orphan.
+  item: {fileID: 11400000, guid: aa84e405318f17d4b841abd05ebb176c, type: 2}
   spriteRenderer: {fileID: -5019851380679348385}
   price: {fileID: 1470606702970440578}
   inventoryManager: {fileID: 0}
@@ -417,7 +418,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cbba0fc510dca4e42aba38e83d5b7d81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b47c500d0ea6ee4487aba91a8b0fca9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
