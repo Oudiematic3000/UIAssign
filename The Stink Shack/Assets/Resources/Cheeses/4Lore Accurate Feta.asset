@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4Lore Accurate Feta
   m_EditorClassIdentifier: 
   itemID: 4
-  flavourText: Works great in a Ceasar Salad
+  flavourText: Works great in a Caesar Salad
   sprite: {fileID: 21300000, guid: 2d114a5e78e678c4eb53fb1be8c1e570, type: 3}
   itemName: Lore accurate feta
   price: 10
