@@ -26,7 +26,6 @@ public class ButtonScript : MonoBehaviour
         }    else 
         {
             button.image.sprite = (Sprite)bagSprites[0];
-            if (shopkeep.colOn)
                 shopkeep.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }

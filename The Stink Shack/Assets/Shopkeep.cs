@@ -20,9 +20,6 @@ public class Shopkeep : MonoBehaviour
         if (!colOn)
         {
             polygonCollider2D.enabled = false;
-        }else
-        {
-            polygonCollider2D.enabled = true;
         }
     }
 }
